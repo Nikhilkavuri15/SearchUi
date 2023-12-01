@@ -3,7 +3,7 @@ import { createContext, useContext, useState } from "react";
 const ResultDataContext = createContext();
 
 const ResultDataContextProvider = ({ children }) => {
-  const [jsonObjects, setJsonObjects] = useState([]);
+  const [jsonObjects, setJsonObjects] = useState({});
   const [showLoading, setShowLoading] = useState(false);
   let values = {
     jsonObjects,

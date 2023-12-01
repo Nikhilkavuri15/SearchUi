@@ -1,8 +1,20 @@
-#searchbtn{
-    font-size: 0.9em;
-    font-weight: 500;
-    width: 150px;
+#searchbtn {
+  font-size: 0.9em;
+  font-weight: 500;
+  width: 150px;
 }
-#inputContainer{
-    position: relative;
+#inputContainer {
+  position: relative;
+}
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
 }

@@ -13,15 +13,21 @@ const SearchInput = () => {
       setShowLoading(true);
       setJsonObjects([])
       let data = await GetUserSearchKeyApi(inputValue);
-      if (data && data.result) {
+      if (data) {
         setShowLoading(false);
-        setJsonObjects(data.result);
+        setJsonObjects(data);
       }
     } catch (err) {
       setShowLoading(false);
       throw new Error("Error while getting the user data" + err);
     }
   };
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      handleSubmit();
+    }
+  };
+
   return (
     <div className="w-100 d-flex justify-content-evenly">
       <div className="input-group w-75">
@@ -32,6 +38,7 @@ const SearchInput = () => {
           aria-label="Search User"
           aria-describedby="basic-addon2"
           onChange={(event) => handleInputChange(event)}
+          onKeyDown={(event) => handleKeyPress(event)} 
         />
         <div className="input-group-append">
           <span className="input-group-text" id="basic-addon2">
